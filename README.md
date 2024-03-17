@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Notification page](./assets/images/Notification-page.png)
 
 The image above shows the screenshot of the webpage built
 

@@ -3,78 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+    <title>Notification page</title>
+    <link rel="stylesheet" href="style.css" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-
-    <title>Frontend Mentor | Notifications page</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link rel="stylesheet" href="css/all.min.css" />
   </head>
   <body>
-    Notifications 3 Mark all as read Mark Webber reacted to your recent post My
-    first tournament today! 1m ago Angela Gray followed you 5m ago Jacob
-    Thompson has joined your group Chess Club 1 day ago Rizky Hasanuddin sent
-    you a private message 5 days ago Hello, thanks for setting up the Chess
-    Club. I've been a member for a few weeks now and I'm already having lots of
-    fun and improving my game. Kimberly Smith commented on your picture 1 week
-    ago Nathan Peterson reacted to your recent post 5 end-game strategies to
-    increase your win rate 2 weeks ago Anna Kim left the group Chess Club 2
-    weeks ago
+    <div class="container">
+      <div class="header">
+        <div class="heading-container">
+          <h3>Notification</h3>
+          <p id="number">3</p>
+        </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+        <h4 id="clearbtn">Mark all as read</h4>
+      </div>
+      <div class="col-container">
+        <div class="col active">
+          <img
+            src="assets/images/avatar-mark-webber.webp"
+            alt=""
+            class="avatar"
+          />
+          <div class="col-info">
+            <div class="col-info-text">
+              <strong class="name">Mark Webber </strong>
+              <span> reacted to your recent post</span>
+              <strong class="title">My first tournament today! </strong>
+
+              <span class="f-box"><i class="fas fa-circle"></i></span>
+            </div>
+            <p class="date">1m ago</p>
+          </div>
+        </div>
+
+        <div class="col active">
+          <img
+            src="assets/images/avatar-angela-gray.webp"
+            alt=""
+            class="avatar"
+          />
+          <div class="col-info">
+            <div class="col-info-text">
+              <strong class="name">Angela Gray </strong>
+              <span> followed you </span>
+              <span class="f-box"><i class="fas fa-circle"></i></span>
+            </div>
+            <p class="date">5m ago</p>
+          </div>
+        </div>
+
+        <div class="col active">
+          <img
+            src="assets/images/avatar-jacob-thompson.webp"
+            alt=""
+            class="avatar"
+          />
+          <div class="col-info">
+            <div class="col-info-text">
+              <strong class="name">Jacob Thompson </strong>
+              <span> has joined your group </span>
+              <strong class="title">Chess Club </strong>
+              <span class="f-box"><i class="fas fa-circle"></i></span>
+            </div>
+            <p class="date">1 day ago</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <img
+            src="assets/images/avatar-rizky-hasanuddin.webp"
+            alt=""
+            class="avatar"
+          />
+          <div class="col-info">
+            <div class="col-info-text">
+              <strong class="name">Rizky Hasanuddin</strong>
+              <span> sent you a private message </span>
+            </div>
+            <p class="date">5 days ago</p>
+            <p class="col-msg">
+              Hello, thanks for setting up the Chess Club. I've been a member
+              for a few weeks now and I'm already having lots of fun and
+              improving my game.
+            </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <img
+            src="assets/images/avatar-kimberly-smith.webp"
+            alt=""
+            class="avatar"
+          />
+          <div class="col-info">
+            <div class="col-info-text flex-col">
+              <div class="wrapper">
+                <strong class="name">kimberly Smith </strong>
+                <span> commented on your picture </span>
+                <p class="date">1wk ago</p>
+              </div>
+              <img src="assets/images/image-chess.webp" class="chess" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <img
+            src="assets/images/avatar-nathan-peterson.webp"
+            alt=""
+            class="avatar"
+          />
+          <div class="col-info">
+            <div class="col-info-text">
+              <strong class="name">Nathan Peterson </strong>
+              <span> reacted to your recent post</span>
+              <strong class="title">5 end-game strategies to win rate</strong>
+            </div>
+            <p class="date">2wk ago</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <img src="assets/images/avatar-anna-kim.webp" alt="" class="avatar" />
+          <div class="col-info">
+            <div class="col-info-text">
+              <strong class="name">Anna Kim </strong>
+              <span> left the group </span>
+              <strong class="title">Chess Club</strong>
+            </div>
+            <p class="date">1wk ago</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-      /* const clearBtn = document.getElementById("clearbtn");
+      const clearBtn = document.getElementById("clearbtn");
       const cols = document.querySelectorAll(".col-container .col");
       const number = document.getElementById("number");
       const circleicon = document.querySelector(".fa-circle");
       const colinfotext = document.querySelector(".col-info-text");
-      const activeCol = document.getElementsByClassName("active");
-      const faboxs = document.getElementsByClassName("fa-box");
-
-      console.log(activeCol);
-      number.innerText = activeCol.length;
+      const faboxs = document.getElementsByClassName("f-box");
 
       clearBtn.onclick = function () {
-        let activeCount = [];
-
         cols.forEach((col) => {
           if (col.classList.contains("active")) {
             col.classList.remove("active");
           }
-          if (col.classList.contains("active")) {
-            activeCount.push(col);
-          }
         });
-
         for (fabox of faboxs) {
-          fabox.innerHTML = "";
+          fabox.innerHTML = " ";
         }
 
-        console.log(activeCount);
-
-        number.innerText = activeCol.length;
-      };*/
+        number.innerText = 0;
+      };
     </script>
   </body>
 </html>
